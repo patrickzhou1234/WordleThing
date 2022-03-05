@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100&display=swap" rel="stylesheet">
+    <style>
+      html {
+        background-color: #1D2333;
+      }
+      
+      #renderText, #dateTime {
+        font-size: calc(4vw + 4vh);
+        color: white;
+        font-family: 'Smooch Sans', sans-serif;
+        text-align: center;
+      }
+
+      #logo {
+        width: calc(11vw + 11vh);
+        height: calc(3vw + 2vh);
+        position: absolute;
+        left: calc(50vw - 5.5vw - 5.5vh);
+        animation: logoanim 2s infinite;
+      }
+
+      @keyframes logoanim {
+        50% {transform: scale(0.8)}
+      }
+
+      #linkIcon {
+        width: calc(1vw + 1vh);
+        height: calc(1vw + 1vh);
+      }
+
+      #wordleLink {
+        width: 6vw;
+        height: 6vh;
+        border: none;
+        color: #fff;
+        background-color: #4f545c;
+        font-size: calc(0.7vw + 0.7vh);
+        transition: background-color 0.2s;
+        border-radius: 4px;
+        position: absolute;
+        left: 47vw;
+        top: 47vh;
+      }
+
+      #wordleLink:hover {
+        cursor: pointer;
+        background-color: #5d6269;
+      }
+    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Today's Wordle</title>
+  </head>
+  <body>
+    <p id="renderText">RENDER HERE</p>
+    <img id="logo" src="https://camo.githubusercontent.com/9633ba7687fe294301734b7516c64a92cbd756558850330837115ace9c610f3a/68747470733a2f2f692e696d6775722e636f6d2f795870526636302e706e67">
+    <br>
+    <p id="dateTime"></p>
+    <a target="_blank" href="https://www.nytimes.com/games/wordle/index.html"><button id="wordleLink">Wordle<img id="linkIcon" src="https://static.thenounproject.com/png/2863113-200.png"></img></button></a>
+    <script>
+      document.getElementById("dateTime").innerHTML = new Date().toLocaleTimeString();
+      setInterval(function() {
+        document.getElementById("dateTime").innerHTML = new Date().toLocaleTimeString();
+      }, 1000);
+    </script>
+  </body>
+</html>
